@@ -4,6 +4,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [sudo chown root:root "$(pwd)"/config-files/etc/wsl.conf, Making root owner of wsl.conf]
   - [sudo ln -f "$(pwd)"/config-files/etc/wsl.conf /etc/wsl.conf, Linking wsl.conf]
 
 - defaults:
