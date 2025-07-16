@@ -11,7 +11,7 @@
         pkgs.fd
         pkgs.fzf
         pkgs.go
-        pkgs.lua
+        pkgs.lua51Packages.lua
         pkgs.luajitPackages.luarocks_bootstrap
         pkgs.nodejs
         pkgs.ripgrep
