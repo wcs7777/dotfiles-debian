@@ -66,7 +66,9 @@
   - libxslt-dev
   - lsb-release
   - man-db
+  - netselect-apt
   - odbcinst
+  - python3-pip
   - python3.11-venv
   - ssh
   - tmux
