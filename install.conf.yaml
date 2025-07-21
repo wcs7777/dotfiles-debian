@@ -22,6 +22,7 @@
     ~/.local/bin/xdg-open: config-files/local/bin/xdg-open
     ~/.config/delta: config-files/config/delta
     ~/.config/bat/config: config-files/config/bat/config
+    ~/.config/mise/config.toml: config-files/config/mise/config.toml
     ~/.my: config-files/my
     ~/win: /mnt/c/Users/wcs
     ~/data:
@@ -54,6 +55,8 @@
 
 - apt:
   - apt-transport-https
+  - autoconf
+  - automake
   - build-essential
   - ca-certificates
   - curl
@@ -61,9 +64,14 @@
   - fuse
   - git
   - gnupg
+  - libffi-dev
   - libicu-dev
+  - libncurses-dev
+  - libreadline-dev
+  - libssl-dev
   - libxml2-dev
   - libxslt-dev
+  - libyaml-dev
   - lsb-release
   - man-db
   - netselect-apt
@@ -86,6 +94,7 @@
     stdin: true
     stdout: true
     stderr: true
+  - [source ./setup-scripts/install-mise.sh, Installing mise]
   - [source ./setup-scripts/install-docker.sh, Installing docker]
   - [source ./setup-scripts/install-nvim.sh, Installing nvim]
   - [source ./setup-scripts/install-mssql-odbc-cli.sh, Installing msodbcsql18 and mssql-tools18]

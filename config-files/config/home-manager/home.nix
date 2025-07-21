@@ -10,10 +10,6 @@
         pkgs.eza
         pkgs.fd
         pkgs.fzf
-        pkgs.go
-        pkgs.lua51Packages.lua
-        pkgs.luajitPackages.luarocks_bootstrap
-        pkgs.nodejs
         pkgs.ripgrep
         pkgs.ruby
         pkgs.sqlite
