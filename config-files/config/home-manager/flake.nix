@@ -1,22 +1,31 @@
 {
-    description = "My Home Manager Flake";
+  description = "Home Manager configuration of wcs";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+  inputs = {
+    # Specify the source of Home Manager and Nixpkgs.
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
 
-    outputs = {nixpkgs, home-manager, ...}: {
-        homeConfigurations = {
-            "wcs" = home-manager.lib.homeManagerConfiguration {
-                # System is very important!
-                pkgs = import nixpkgs { system = "x86_64-linux"; };
+  outputs =
+    { nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      homeConfigurations."wcs" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-                modules = [ ./home.nix ]; # Defined later
-            };
-        };
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./home.nix ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+      };
     };
 }
