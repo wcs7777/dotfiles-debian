@@ -46,7 +46,9 @@
     ~/.zsh/zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
     ~/.zsh/zsh-vi-mode: https://github.com/jeffreytse/zsh-vi-mode.git
     ~/.tmux/plugins/tpm: https://github.com/tmux-plugins/tpm
-    ~/.config/nvim: https://github.com/wcs7777/neovimrc.git
+    ~/.config/nvim:
+      repository: https://github.com/wcs7777/neovimrc.git
+      depth:
 
 - defaults:
     apt:
