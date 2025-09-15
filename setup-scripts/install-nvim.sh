@@ -6,5 +6,5 @@ if command -v nvim &> /dev/null; then
 fi
 curl -SL \
 	--output ~/.local/bin/nvim \
-	https://github.com/neovim/neovim-releases/releases/download/v0.11.2/nvim-linux-x86_64.appimage \
+	https://github.com/neovim/neovim-releases/releases/download/v0.11.4/nvim-linux-x86_64.appimage \
 	&& chmod u+x ~/.local/bin/nvim
