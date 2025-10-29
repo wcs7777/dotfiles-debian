@@ -3,3 +3,6 @@ go = 'latest'
 lua = '5.1.5'
 node = 'latest'
 python = 'latest'
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
