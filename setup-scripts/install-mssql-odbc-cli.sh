@@ -5,7 +5,8 @@ if command -v sqlcmd &> /dev/null; then
 	exit 0
 fi
 
-DEBIAN_VERSION=$(lsb_release -rs)
+# DEBIAN_VERSION=$(lsb_release -rs)
+DEBIAN_VERSION=12
 curl -sLSO https://packages.microsoft.com/config/debian/$DEBIAN_VERSION/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
