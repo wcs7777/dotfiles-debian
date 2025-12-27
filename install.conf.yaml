@@ -81,7 +81,6 @@
   - python3-pip
   - python3-venv
   - ssh
-  - tmux
   - tree
   - unzip
   - vim-gtk3
