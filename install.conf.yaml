@@ -99,6 +99,4 @@
   - [source ./setup-scripts/install-docker.sh, Installing docker]
   - [source ./setup-scripts/install-nvim.sh, Installing nvim]
   - [source ./setup-scripts/install-mssql-odbc-cli.sh, Installing msodbcsql18 and mssql-tools18]
-  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tpm plugins]
-  - [~/.tmux/plugins/tpm/bin/update_plugins all, Updating tpm plugins]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
