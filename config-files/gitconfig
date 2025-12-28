@@ -27,6 +27,7 @@
 	downm=!git pull --rebase --prune origin main && git submodule update --init
 	rlc = reset HEAD^
 	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	ign = ls-files --others --ignored --exclude-standard --directory
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [init]
 	defaultBranch = main

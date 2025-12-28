@@ -5,16 +5,11 @@ alias grep='grep --color=auto'
 alias h1='history 1'
 alias hs='history 1 | rg'
 alias hsi='history 1 | rg -i'
-alias list-git-ignores-files="git check-ignore -v -- *"
 alias permissions="stat -c '%a %U:%G %n'"
 alias rnvim="nvim -R"
 
 clipcopy () {
 	cat "${1:-/dev/stdin}" | clip.exe
-}
-
-sqlf () {
-	cat "${1}" | sleek
 }
 
 mkcd() {
