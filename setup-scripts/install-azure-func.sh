@@ -13,6 +13,10 @@ codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
 source_list=""
 if [[ $(. /etc/os-release && echo $ID) == 'debian'  ]]; then
 	release=$(. /etc/os-release && echo "$VERSION_ID" | cut -d '.' -f 1)
+	if [[ $release > 12 ]]; then
+		codename="bookworm"
+		release="12"
+	if
 	source_list="deb [arch=amd64] https://packages.microsoft.com/debian/${release}/prod ${codename} main"
 else
 	source_list="deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-${codename}-prod ${codename} main"
