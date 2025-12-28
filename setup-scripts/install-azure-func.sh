@@ -16,7 +16,7 @@ if [[ $(. /etc/os-release && echo $ID) == 'debian'  ]]; then
 	if [[ $release > 12 ]]; then
 		codename="bookworm"
 		release="12"
-	if
+	fi
 	source_list="deb [arch=amd64] https://packages.microsoft.com/debian/${release}/prod ${codename} main"
 else
 	source_list="deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-${codename}-prod ${codename} main"

@@ -55,10 +55,6 @@
       reinstall: false
       batch_mode: true
 
-- shell:
-  - [sudo apt remove vim, Removing vim]
-  - [sudo apt autoremove, apt autoremove]
-
 - apt:
   - apt-transport-https
   - autoconf
