@@ -27,7 +27,6 @@
     pkgs.ripgrep
     pkgs.ruby
     pkgs.sqlite
-    pkgs.tmux
     pkgs.trash-cli
     pkgs.tree-sitter
     # # Adds the 'hello' command to your environment. It prints a friendly

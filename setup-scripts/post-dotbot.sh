@@ -6,5 +6,3 @@ source "${BASEDIR}/install-nix-home-manager.sh"
 chsh -s /bin/zsh
 zsh -c "home-manager switch"
 zsh -c "mise install"
-zsh -c "echo 'Installing tpm plugins' && ~/.tmux/plugins/tpm/bin/install_plugins"
-zsh -c "echo 'Updating tpm plugins' && ~/.tmux/plugins/tpm/bin/update_plugins all"
