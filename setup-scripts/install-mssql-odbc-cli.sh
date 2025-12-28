@@ -5,8 +5,8 @@ if command -v sqlcmd &> /dev/null; then
 	exit 0
 fi
 
-DEBIAN_VERSION=$(. /etc/os-release && echo "$VERSION_ID")
-curl -sLSO https://packages.microsoft.com/config/debian/$DEBIAN_VERSION/packages-microsoft-prod.deb
+UBUNTU_VERSION=$(. /etc/os-release && echo "$VERSION_ID")
+curl -sLSO https://packages.microsoft.com/config/ubuntu/$UBUNTU_VERSION/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
