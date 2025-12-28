@@ -75,7 +75,6 @@
   - libxslt-dev
   - libyaml-dev
   - man-db
-  - netselect-apt
   - odbcinst
   - python3-pip
   - python3-venv
@@ -83,7 +82,6 @@
   - tmux
   - tree
   - unzip
-  - vim-gtk3
   - wget
   - zip
   - zsh
