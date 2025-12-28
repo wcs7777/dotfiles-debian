@@ -74,7 +74,6 @@
   - libxml2-dev
   - libxslt-dev
   - libyaml-dev
-  - lsb-release
   - man-db
   - netselect-apt
   - odbcinst
