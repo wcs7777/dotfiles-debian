@@ -1,15 +1,24 @@
 #!/bin/bash
-
 if command -v func &> /dev/null; then
 	echo "func already installed"
 	exit 0
 fi
 
-DEBIAN_VERSION=$(lsb_release -rs)
-curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft-prod.gpg > /dev/null
-curl -sLS https://packages.microsoft.com/config/debian/$DEBIAN_VERSION/prod.list | sudo tee /etc/apt/sources.list.d/microsoft-prod.list > /dev/null
-sudo chown root:root /usr/share/keyrings/microsoft-prod.gpg
-sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+# Install the Microsoft package repository GPG key, to validate package integrity
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
+# Set up the APT source list before doing an APT update.
+codename=$(. /etc/os-release && echo "$VERSION_CODENAME")
+source_list=""
+if [[ $(. /etc/os-release && echo $ID) == 'debian'  ]]; then
+	release=$(. /etc/os-release && echo "$VERSION_ID" | cut -d '.' -f 1)
+	source_list="deb [arch=amd64] https://packages.microsoft.com/debian/${release}/prod ${codename} main"
+else
+	source_list="deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-${codename}-prod ${codename} main"
+fi
+echo "$source_list" | sudo tee /etc/apt/sources.list.d/dotnetdev.list
+
+# Update repository information and install the Core Tools package
 sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install azure-functions-core-tools-4 --yes
