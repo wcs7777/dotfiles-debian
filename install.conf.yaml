@@ -21,8 +21,8 @@
     ~/.local/bin/xdg-open: ./config-files/local/bin/xdg-open
     ~/.config/delta: ./config-files/config/delta
     ~/.config/bat/config: ./config-files/config/bat/config
-    ~/.config/mise/config.toml: ./config-files/config/mise/config.toml
-    ~/.config/eza/theme.yml: ./config-files/config/eza/theme.yml
+    ~/.config/mise: ./config-files/config/mise
+    ~/.config/eza: ./config-files/config/eza
     ~/.my: ./config-files/my
     ~/win: /mnt/c/Users/wcs
     ~/data:
