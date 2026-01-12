@@ -1,6 +1,7 @@
 # alias lazyvim="NVIM_APPNAME=snvim/lazyvim nvim"
 alias deltaa="delta --no-gitconfig --config ~/.config/delta"
 alias docker-rmi-dangling="docker image rm \`docker images -qa -f 'dangling=true'\`"
+alias exa="eza -lF --icons --color=always --group-directories-first"
 alias grep='grep --color=auto'
 alias h1='history 1'
 alias hs='history 1 | rg'

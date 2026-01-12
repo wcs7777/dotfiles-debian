@@ -13,27 +13,28 @@
       relink: true
 
 - link:
-    ~/.gitconfig: config-files/gitconfig
-    ~/.tmux.conf: config-files/tmux.conf
-    ~/.p10k.zsh: config-files/p10k.zsh
-    ~/.zshrc: config-files/zshrc
-    ~/.vim/vimrc: config-files/vim/vimrc
-    ~/.vim/colors/PaperColor.vim: config-files/vim/colors/PaperColor.vim
-    ~/.local/bin/xdg-open: config-files/local/bin/xdg-open
-    ~/.config/delta: config-files/config/delta
-    ~/.config/bat/config: config-files/config/bat/config
-    ~/.config/mise/config.toml: config-files/config/mise/config.toml
-    ~/.my: config-files/my
+    ~/.gitconfig: ./config-files/gitconfig
+    ~/.tmux.conf: ./config-files/tmux.conf
+    ~/.p10k.zsh: ./config-files/p10k.zsh
+    ~/.zshrc: ./config-files/zshrc
+    ~/.vim/vimrc: ./config-files/vim/vimrc
+    ~/.vim/colors/PaperColor.vim: ./config-files/vim/colors/PaperColor.vim
+    ~/.local/bin/xdg-open: ./config-files/local/bin/xdg-open
+    ~/.config/delta: ./config-files/config/delta
+    ~/.config/bat/config: ./config-files/config/bat/config
+    ~/.config/mise/config.toml: ./config-files/config/mise/config.toml
+    ~/.config/eza/theme.yml: ./config-files/config/eza/theme.yml
+    ~/.my: ./config-files/my
     ~/win: /mnt/c/Users/wcs
     ~/data:
       path: /mnt/wsl/data
       ignore-missing: true
     ~/.config/home-manager/flake.nix:
       type: hardlink
-      path: config-files/config/home-manager/flake.nix
+      path: ./config-files/config/home-manager/flake.nix
     ~/.config/home-manager/home.nix:
       type: hardlink
-      path: config-files/config/home-manager/home.nix
+      path: ./config-files/config/home-manager/home.nix
 
 - defaults:
     git:
