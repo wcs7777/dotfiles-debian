@@ -14,7 +14,6 @@
 
 - link:
     ~/.gitconfig: ./config-files/gitconfig
-    ~/.tmux.conf: ./config-files/tmux.conf
     ~/.zshrc: ./config-files/zshrc
     ~/.vim/vimrc: ./config-files/vim/vimrc
     ~/.vim/colors/PaperColor.vim: ./config-files/vim/colors/PaperColor.vim
@@ -23,6 +22,7 @@
     ~/.config/bat/config: ./config-files/config/bat/config
     ~/.config/mise: ./config-files/config/mise
     ~/.config/eza: ./config-files/config/eza
+    ~/.config/tmux: ./config-files/config/tmux/
     ~/.my: ./config-files/my
     ~/win: /mnt/c/Users/wcs
     ~/data:
