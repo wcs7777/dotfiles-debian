@@ -87,12 +87,12 @@
 
 - shell:
   -
-    command: source ./setup-scripts/install-nix.sh
+    command: source ./install-scripts/nix.sh
     description: Installing nix
     stdin: true
     stdout: true
     stderr: true
-  - [source ./setup-scripts/install-mise.sh, Installing mise]
-  - [source ./setup-scripts/install-docker.sh, Installing docker]
-  - [source ./setup-scripts/install-nvim.sh, Installing nvim]
+  - [source ./install-scripts/mise.sh, Installing mise]
+  - [source ./install-scripts/docker.sh, Installing docker]
+  - [source ./install-scripts/nvim.sh, Installing nvim]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]

@@ -2,7 +2,7 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "${BASEDIR}/install-nix-home-manager.sh"
+source "${BASEDIR}/../install-scripts/nix-home-manager.sh"
 chsh -s /bin/zsh
 zsh -c "home-manager switch"
 zsh -c "mise install"
