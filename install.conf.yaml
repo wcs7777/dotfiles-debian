@@ -41,11 +41,9 @@
       create_parents: true
 
 - git:
-    ~/.zsh/powerlevel10k: https://github.com/romkatv/powerlevel10k.git
     ~/.zsh/zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
     ~/.zsh/zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting.git
     ~/.zsh/zsh-vi-mode: https://github.com/jeffreytse/zsh-vi-mode.git
-    ~/.tmux/plugins/tpm: https://github.com/tmux-plugins/tpm
     ~/.config/nvim:
       repository: https://github.com/wcs7777/neovimrc.git
       depth:
@@ -97,7 +95,4 @@
   - [source ./setup-scripts/install-mise.sh, Installing mise]
   - [source ./setup-scripts/install-docker.sh, Installing docker]
   - [source ./setup-scripts/install-nvim.sh, Installing nvim]
-  - [source ./setup-scripts/install-mssql-odbc-cli.sh, Installing msodbcsql18 and mssql-tools18]
-  - [~/.tmux/plugins/tpm/bin/install_plugins, Installing tpm plugins]
-  - [~/.tmux/plugins/tpm/bin/update_plugins all, Updating tpm plugins]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
