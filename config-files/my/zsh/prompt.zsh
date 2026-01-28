@@ -9,10 +9,10 @@ git_info() {
 			fi
 		fi
 		if [[ -n $branch ]]; then
-      local git_color="red"
-      if git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
-        git_color="blue"
-      fi
+			local git_color="red"
+			if git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
+				git_color="blue"
+			fi
 			branch=" %F{${git_color}}($branch)%f"
 		fi
 	fi
