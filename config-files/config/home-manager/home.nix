@@ -24,11 +24,13 @@
     pkgs.eza
     pkgs.fd
     pkgs.fzf
+    pkgs.jq
+    pkgs.litecli
     pkgs.ripgrep
     pkgs.ruby
-    pkgs.sqlite
     pkgs.tealdeer
     pkgs.trash-cli
+    pkgs.tre-command
     pkgs.tree-sitter
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
