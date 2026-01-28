@@ -21,9 +21,13 @@ function zvm_config() {
 
 function zvm_after_init() {
 	. ~/.my/aliases.sh
-	. ~/.my/zsh/plugins/harpoon_paths.zsh
-	. ~/.my/zsh/plugins/harpoon_zsh.zsh
 	. ~/.my/zsh/bindkeys.zsh
+	if [ -f ~/.my-private/harpoon_paths.zsh ]; then
+		. ~/.my-private/harpoon_paths.zsh
+	else
+		. ~/.my/zsh/plugins/harpoon_paths.zsh
+	fi
+	. ~/.my/zsh/plugins/harpoon_zsh.zsh
 }
 
 . ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
