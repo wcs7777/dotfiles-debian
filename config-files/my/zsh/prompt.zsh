@@ -1,4 +1,13 @@
 git_info() {
+	case "$PWD" in
+		/mnt/c/* | \
+		/mnt/d/* | \
+		~/win/* | \
+		"$HOME/win/*")
+			echo ""
+			return 0
+			;;
+	esac
 	local branch=""
 	if command -v git >/dev/null 2>&1; then
 		branch=$(timeout 2s git branch --show-current 2>/dev/null)
