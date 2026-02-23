@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if command -v nvim &> /dev/null; then
-	echo "nvim already installed"
+	echo "nvim is already installed"
 	exit 0
 fi
 curl -SL \

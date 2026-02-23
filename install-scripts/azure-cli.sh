@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if command -v az &> /dev/null; then
-	echo "az already installed"
+	echo "az is already installed"
 	exit 0
 fi
 

@@ -29,6 +29,7 @@
     pkgs.ripgrep
     pkgs.ruby
     pkgs.tealdeer
+    pkgs.tmuxinator
     pkgs.trash-cli
     pkgs.tre-command
     pkgs.tree-sitter

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if command -v sqlcmd &> /dev/null; then
-	echo "mssql tools already installed"
+	echo "mssql tools is already installed"
 	exit 0
 fi
 

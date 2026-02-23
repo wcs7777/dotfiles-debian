@@ -1,6 +1,6 @@
 #!/bin/bash
 if command -v func &> /dev/null; then
-	echo "func already installed"
+	echo "func is already installed"
 	exit 0
 fi
 

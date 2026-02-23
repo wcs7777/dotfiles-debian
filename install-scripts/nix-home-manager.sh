@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if command -v home-manager &> /dev/null; then
-	echo "home-manager already installed"
+	echo "home-manager is already installed"
 	exit 0
 fi
 

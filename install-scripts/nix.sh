@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if command -v nix &> /dev/null; then
-	echo "nix already installed"
+	echo "nix is already installed"
 	exit 0
 fi
 
