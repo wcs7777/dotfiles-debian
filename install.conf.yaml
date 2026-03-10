@@ -95,4 +95,5 @@
   - [source ./install-scripts/mise.sh, Installing mise]
   - [source ./install-scripts/docker.sh, Installing docker]
   - [source ./install-scripts/nvim.sh, Installing nvim]
+  - [source ./install-scripts/tmux-sessionizer.sh, Installing tmux-sessionizer]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
