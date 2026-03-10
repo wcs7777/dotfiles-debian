@@ -4,7 +4,7 @@
 [core]
 	repositoryFormatVersion = 0
 	symlinks = false
-	editor = vim
+	editor = nvim
 [alias]
 	edit = config --edit
 	editg = config --global --edit
