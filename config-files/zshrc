@@ -62,6 +62,6 @@ fi
 
 export COLORTERM="truecolor"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
-export EDITOR=nvim
+export EDITOR="nvim"
 
 . ~/.my/zsh/prompt.zsh
