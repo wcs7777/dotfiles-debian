@@ -28,3 +28,7 @@ bindkey "^[6" __my_path_6
 bindkey "^[7" __my_path_7
 bindkey "^[8" __my_path_8
 bindkey "^[9" __my_path_9
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^x^e" edit-command-line
