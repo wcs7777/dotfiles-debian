@@ -17,6 +17,14 @@ mkcd() {
 	mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-wincd() {
+win-cd() {
 	(cd "$(readlink -f ${1:-.})" && explorer.exe .)
+}
+
+win-notify() {
+	pwsh.exe -NonInteractive -NoProfile -Command "New-BurntToastNotification -Text '$1'"
+}
+
+win-notify-sound  () {
+	pwsh.exe -NonInteractive -NoProfile -Command "New-BurntToastNotification -Sound Call3 -Text '$1'"
 }
