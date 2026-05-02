@@ -25,7 +25,6 @@
     pkgs.fd
     pkgs.fzf
     pkgs.jq
-    pkgs.litecli
     pkgs.ripgrep
     pkgs.ruby
     pkgs.tealdeer
