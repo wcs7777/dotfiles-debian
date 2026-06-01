@@ -13,6 +13,7 @@ class Params(TypedDict):
     destination: str
     repository: str
     depth: int | None
+    branch: str | None
     force: bool
     create_parents: bool
     base_dir: str | None
@@ -59,6 +60,7 @@ class Git(Plugin):
                     'destination',
                     'repository',
                     'depth',
+                    'branch',
                     'force',
                     'create_parents',
                     'base_dir',
@@ -102,6 +104,8 @@ class Git(Plugin):
                 self._log.action(f'Would create {destination.parent}')
         if params['depth'] is not None:
             args.append(f"--depth={params['depth']}")
+        if params['branch'] is not None:
+            args.append(f"--branch={params['branch']}")
         args.append(params['repository'])
         args.append(str(destination))
         if self._dry_run:
@@ -128,6 +132,7 @@ class Git(Plugin):
             'destination': '',
             'repository': '',
             'depth': None,
+            'branch': None,
             'force': False,
             'create_parents': False,
             'base_dir': None,
