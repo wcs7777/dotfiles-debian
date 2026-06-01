@@ -48,6 +48,7 @@
     ~/.config/nvim:
       repository: https://github.com/wcs7777/neovimrc.git
       depth:
+      branch: work
 
 - defaults:
     apt:
