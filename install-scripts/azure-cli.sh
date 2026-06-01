@@ -12,14 +12,15 @@ curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
 sudo chmod go+r /etc/apt/keyrings/microsoft.gpg
 
 # Add the Azure CLI software repository
-AZ_DIST=$(. /etc/os-release && echo "$VERSION_CODENAME")
+# AZ_DIST=$(lsb_release -cs)
+AZ_DIST="noble"
 echo "Types: deb
 URIs: https://packages.microsoft.com/repos/azure-cli/
 Suites: ${AZ_DIST}
 Components: main
 Architectures: $(dpkg --print-architecture)
-Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources > /dev/null
+Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources
 
 # Update repository information and install the azure-cli package:
 sudo apt-get update
-sudo ACCEPT_EULA=Y apt-get install azure-cli --yes
+sudo apt-get install azure-cli --yes

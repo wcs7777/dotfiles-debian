@@ -6,7 +6,8 @@ if command -v sqlcmd &> /dev/null; then
 fi
 
 id=$(. /etc/os-release && echo "$ID")
-version=$(. /etc/os-release && echo "$VERSION_ID")
+# version=$(. /etc/os-release && echo "$VERSION_ID")
+version="25.10"
 
 curl -sLSO https://packages.microsoft.com/config/$id/$version/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
