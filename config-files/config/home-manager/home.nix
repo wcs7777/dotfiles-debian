@@ -32,6 +32,7 @@
     pkgs.trash-cli
     pkgs.tre-command
     pkgs.tree-sitter
+    pkgs.vivid
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
