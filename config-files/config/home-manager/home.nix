@@ -33,6 +33,15 @@
     pkgs.tre-command
     pkgs.tree-sitter
     pkgs.vivid
+    # code formatters
+    pkgs.black
+    pkgs.isort
+    pkgs.prettier
+    pkgs.prettierd
+    pkgs.ruff
+    pkgs.sqlfluff
+    pkgs.stylua
+    pkgs.xmlstarlet
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
