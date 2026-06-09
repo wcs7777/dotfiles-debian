@@ -26,6 +26,7 @@
     ~/.config/tmux: ./config-files/config/tmux/
     ~/.config/litecli/config: ./config-files/config/litecli/config
     ~/.config/sqlfluff/setup.cfg: ./config-files/config/sqlfluff/setup.cfg
+    ~/.config/.prettierrc.json: ./config-files/config/prettierrc.json
     ~/.my: ./config-files/my
     ~/data:
       path: /mnt/wsl/data
