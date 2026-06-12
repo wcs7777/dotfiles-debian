@@ -6,7 +6,6 @@ alias grep='grep --color=auto'
 alias h1='history 1'
 alias hs='history 1 | rg'
 alias hsi='history 1 | rg -i'
-alias ls='ls --color=auto'
 alias permissions="stat -c '%a %U:%G %n'"
 alias rnvim="nvim -R"
 
