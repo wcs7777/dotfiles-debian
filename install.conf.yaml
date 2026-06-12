@@ -16,6 +16,7 @@
 - link:
     ~/.gitconfig: ./config-files/gitconfig
     ~/.zshrc: ./config-files/zshrc
+    ~/.zshenv: ./config-files/zshenv
     ~/.vim/vimrc: ./config-files/vim/vimrc
     ~/.vim/colors/PaperColor.vim: ./config-files/vim/colors/PaperColor.vim
     ~/.local/bin/xdg-open: ./config-files/local/bin/xdg-open

@@ -32,19 +32,6 @@ function zvm_after_init() {
 
 . ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-additional_paths=(
-	~/.local/bin
-	/mnt/d/wsl/path
-	/opt/mssql-tools18/bin
-)
-for p in "${additional_paths[@]}"
-do
-	if [[ -d "$p" && ":$PATH:" != *":$p:"* ]] ; then
-		PATH="$PATH:$p"
-	fi
-done
-unset additional_paths
-
 additional_sources=(
 	~/foobar/barfoo.sh
 )
@@ -59,10 +46,5 @@ unset additional_sources
 if [ -f ~/.local/bin/mise ]; then
 	eval "$(~/.local/bin/mise activate zsh)"
 fi
-
-export COLORTERM="truecolor"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
-export EDITOR="nvim"
-export LS_COLORS="$(vivid generate tokyonight-day)"
 
 . ~/.my/zsh/prompt.zsh
