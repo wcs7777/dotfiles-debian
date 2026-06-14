@@ -6,7 +6,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR="nvim"
 export COLORTERM="truecolor"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
-export LS_COLORS="$(vivid generate tokyonight-day)"
 export KITTY_KEYBOARD_PROTOCOL=false
 
 additional_paths=(
