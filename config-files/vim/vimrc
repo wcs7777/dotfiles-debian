@@ -38,6 +38,7 @@ set ruler
 set scrolloff=2
 set shiftround
 set shiftwidth=4
+set shortmess-=S
 set showcmd
 set showmode
 set sidescrolloff=2
