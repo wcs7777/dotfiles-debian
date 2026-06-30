@@ -1,4 +1,3 @@
-# vi: ft=dosini
 [main]
 
 # Multi-line mode allows breaking up the sql statements into multiple lines. If
@@ -17,6 +16,12 @@ destructive_warning = True
 # In Windows: %USERPROFILE%\AppData\Local\dbcli\litecli\log
 # %USERPROFILE% is typically C:\Users\{username}
 log_file = default
+
+# history_file location.
+# In Unix/Linux: ~/.config/litecli/history
+# In Windows: %USERPROFILE%\AppData\Local\dbcli\litecli\history
+# %USERPROFILE% is typically C:\Users\{username}
+history_file = default
 
 # Default log level. Possible values: "CRITICAL", "ERROR", "WARNING", "INFO"
 # and "DEBUG". "NONE" disables logging.
@@ -41,7 +46,7 @@ table_format = ascii
 # manni, igor, xcode, vim, autumn, vs, rrt, native, perldoc, borland, tango, emacs,
 # friendly, monokai, paraiso, colorful, murphy, bw, pastie, paraiso, trac, default,
 # fruity.
-# Screenshots at http://mycli.net/syntax
+# See the LiteCLI README for syntax examples
 syntax_style = friendly
 
 # Keybindings: Possible values: emacs, vi.
@@ -67,8 +72,8 @@ autocompletion = True
 # \r - The current time, standard 12-hour time (1-12)
 # \s - Seconds of the current time
 # \x1b[...m - insert ANSI escape sequence
-prompt = '\d> '
-prompt_continuation = '-> '
+prompt = "\d> "
+prompt_continuation = "-> "
 
 # Show/hide the informational toolbar with function keymap at the footer.
 show_bottom_toolbar = True
@@ -88,41 +93,107 @@ keyword_casing = auto
 
 # disabled pager on startup
 enable_pager = True
-
-# Custom colors for the completion menu, toolbar, etc.
 [colors]
-completion-menu.completion.current = 'bg:#ffffff #000000'
-completion-menu.completion = 'bg:#008888 #ffffff'
-completion-menu.meta.completion.current = 'bg:#44aaaa #000000'
-completion-menu.meta.completion = 'bg:#448888 #ffffff'
-completion-menu.multi-column-meta = 'bg:#aaffff #000000'
-scrollbar.arrow = 'bg:#003333'
-scrollbar = 'bg:#00aaaa'
-selected = '#ffffff bg:#6666aa'
-search = '#ffffff bg:#4444aa'
-search.current = '#ffffff bg:#44aa44'
-bottom-toolbar = 'bg:#222222 #aaaaaa'
-bottom-toolbar.off = 'bg:#222222 #888888'
-bottom-toolbar.on = 'bg:#222222 #ffffff'
-search-toolbar = 'noinherit bold'
-search-toolbar.text = 'nobold'
-system-toolbar = 'noinherit bold'
-arg-toolbar = 'noinherit bold'
-arg-toolbar.text = 'nobold'
-bottom-toolbar.transaction.valid = 'bg:#222222 #00ff5f bold'
-bottom-toolbar.transaction.failed = 'bg:#222222 #ff005f bold'
+completion-menu.completion.current = "bg:#ffffff #000000"
+completion-menu.completion = "bg:#008888 #ffffff"
+completion-menu.meta.completion.current = "bg:#44aaaa #000000"
+completion-menu.meta.completion = "bg:#448888 #ffffff"
+completion-menu.multi-column-meta = "bg:#aaffff #000000"
+scrollbar.arrow = "bg:#003333"
+scrollbar = "bg:#00aaaa"
+selected = "#ffffff bg:#6666aa"
+search = "#ffffff bg:#4444aa"
+search.current = "#ffffff bg:#44aa44"
+bottom-toolbar = "bg:#222222 #aaaaaa"
+bottom-toolbar.off = "bg:#222222 #888888"
+bottom-toolbar.on = "bg:#222222 #ffffff"
+search-toolbar = noinherit bold
+search-toolbar.text = nobold
+system-toolbar = noinherit bold
+arg-toolbar = noinherit bold
+arg-toolbar.text = nobold
+bottom-toolbar.transaction.valid = "bg:#222222 #00ff5f bold"
+bottom-toolbar.transaction.failed = "bg:#222222 #ff005f bold"
 
 # style classes for colored table output
 output.header = "#701665 bold"
 output.odd-row = ""
 output.even-row = ""
-
-# Favorite queries.
 [favorite_queries]
-
-# Startup commands
-# litecli commands or sqlite commands to be executed on startup.
-# some of them will require you to have a database attached.
-# they will be executed in the same order as they appear in the list.
+check_missing_fna = '''SELECT
+  -- count(DISTINCT c.contrato) AS total
+  c.contrato,
+  c.origem,
+  rc.fs_registro,
+  date(c.dataAssinatura / 1000, 'unixepoch') AS dataAssinatura,
+  date(c.dataCancelamento/ 1000, 'unixepoch') AS dataCancelamento,
+  p.id_parceiro,
+  p.dt_formalizacao_contrato,
+  p.dt_antecipa_desde,
+  p.tp_status,
+  iif(cc.id_comissao_contrato IS NOT NULL, 1, 0) AS has_comissao_contrato,
+  iif(nf.id_nota_fiscal_detalhe IS NOT NULL, 1, 0) AS has_nota_fiscal_detalhe
+FROM
+  ext.CONTRATACOES AS c
+INNER JOIN
+  DOM_PARCEIRO AS p
+  ON c.cnpjImobiliaria = p.nr_cpf_cnpj
+INNER JOIN
+  NEG_REGISTRO_CONTRATO AS rc
+  ON c.contrato = rc.cd_contrato
+LEFT JOIN
+  NEG_COMISSAO_CONTRATO AS cc
+  ON c.proposta = cc.proposta
+LEFT JOIN
+  NEG_NOTA_FISCAL_DETALHE AS nf
+  ON c.contrato = nf.cd_contrato
+WHERE
+  c.contrato IN (
+    '9278159',
+    '9278363',
+    '9278894',
+    '9279278',
+    '9280029',
+    '9280067',
+    '9281379',
+    '9282206',
+    '9282207',
+    '9282209',
+    '9282210',
+    '9282679',
+    '9283133',
+    '9284110',
+    '9284151',
+    '9284224',
+    '9284257',
+    '9285176',
+    '9285289',
+    '9285361',
+    '9285628',
+    '9285703',
+    '9285869',
+    '9285951',
+    '9286049',
+    '9286429',
+    '9286743',
+    '9286771',
+    '9286784',
+    '9286917',
+    '9287153',
+    '9287504',
+    '9287609',
+    '9287928',
+    '9288314',
+    '9288645',
+    '9288815',
+    '9289411',
+    '9289525',
+    '9289848',
+    '9289849',
+    '9291258'
+  )
+ORDER BY
+  p.dt_formalizacao_contrato DESC,
+  c.contrato,
+  p.id_parceiro'''
 [startup_commands]
-#commands = ".tables", "pragma foreign_keys = ON;"
