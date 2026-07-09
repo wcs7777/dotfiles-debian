@@ -6,18 +6,8 @@
 	symlinks = false
 	editor = nvim
 [alias]
-	edit = config --edit
-	editg = config --global --edit
-	st = status -sb
-	b = branch
-	c = checkout
-	m = checkout main
-	cob = checkout -b
-	l = log --oneline
 	lg = log --all --graph --decorate --oneline --abbrev-commit
 	last = log -1 HEAD --stat
-	cm = !git add -A && git commit -m
-	bdel = branch -D
 	undo = reset HEAD~1 --mixed
 	amend = commit -a --amend
 	se = !git rev-list --all | xargs git grep -F
