@@ -1,31 +1,30 @@
 git_info() {
-	local git="git"
-	case "$PWD" in
-		/mnt/c/* | \
-		/mnt/d/* | \
-		~/win/* | \
-		"$HOME/win/*")
-			git="git.exe"
-			;;
-	esac
-	local branch=""
-	if command -v $git >/dev/null 2>&1; then
-		branch=$(timeout 2s $git branch --show-current 2>/dev/null)
-		if [[ -z $branch ]]; then
-			local ref=$(timeout 2s $git rev-parse --short HEAD 2>/dev/null)
-			if [[ -n $ref ]]; then
+    local git="git"
+    case "$PWD" in
+        /mnt/c/* | /mnt/d/* | "$HOME/win/"*)
+            git="git.exe"
+            ;;
+    esac
+    command -v "$git" >/dev/null 2>&1 || return
+	local branch=$(timeout 3s "$git" branch --show-current 2>/dev/null)
+	if [[ -z $branch ]]; then
+		local ref=$(timeout 3s "$git" rev-parse --short HEAD 2>/dev/null)
+		if [[ -n $ref ]]; then
+			local tag=$(timeout 3s "$git" tag --points-at HEAD 2>/dev/null | head -1)
+			if [[ -n $tag ]]; then
+				branch="#$tag"
+			else
 				branch="@$ref"
 			fi
 		fi
-		if [[ -n $branch ]]; then
-			local git_color="red"
-			if $git diff --quiet 2>/dev/null && $git diff --cached --quiet 2>/dev/null; then
-				git_color="blue"
-			fi
-			branch=" %F{${git_color}}($branch)%f"
-		fi
 	fi
-	echo "$branch"
+    [[ -z $branch ]] && return
+	local git_color="red"
+    if timeout 3s "$git" diff --quiet 2>/dev/null &&
+       timeout 3s "$git" diff --cached --quiet 2>/dev/null; then
+        git_color=blue
+    fi
+	echo " %F{${git_color}}($branch)%f"
 }
 
 setopt PROMPT_SUBST
