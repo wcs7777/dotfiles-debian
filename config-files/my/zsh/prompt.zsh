@@ -1,3 +1,8 @@
+python_venv() {
+    [[ -z $VIRTUAL_ENV ]] && return
+	echo "%F{cyan}(venv)%f"
+}
+
 git_info() {
     local git="git"
     case "$PWD" in
@@ -24,8 +29,16 @@ git_info() {
        timeout 3s "$git" diff --cached --quiet 2>/dev/null; then
         git_color=blue
     fi
-	echo " %F{${git_color}}($branch)%f"
+	echo "%F{${git_color}}($branch)%f"
+}
+
+segments() {
+	local g=$(git_info)
+	local v=$(python_venv)
+	local s="$g$v"
+    [[ -z $s ]] && return
+	echo "$s "
 }
 
 setopt PROMPT_SUBST
-PROMPT='%2~$(git_info) > '
+PROMPT='$(segments)%2~ > '
