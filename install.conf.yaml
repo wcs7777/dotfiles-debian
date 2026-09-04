@@ -25,6 +25,7 @@
     ~/.config/mise: ./config-files/config/mise
     ~/.config/eza: ./config-files/config/eza
     ~/.config/tmux: ./config-files/config/tmux/
+    ~/.config/ruff: ./config-files/config/ruff/
     ~/.config/litecli/config: ./config-files/config/litecli/config
     ~/.config/sqlfluff/setup.cfg: ./config-files/config/sqlfluff/setup.cfg
     ~/.config/.prettierrc.json: ./config-files/config/prettierrc.json
