@@ -35,7 +35,6 @@
     pkgs.vivid
     # code formatters
     pkgs.black
-    pkgs.isort
     pkgs.prettier
     pkgs.prettierd
     pkgs.ruff
