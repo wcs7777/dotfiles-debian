@@ -1,6 +1,6 @@
 python_venv() {
     [[ -z $VIRTUAL_ENV ]] && return
-	echo "%F{cyan}(venv)%f"
+	echo "(venv)"
 }
 
 git_info() {
