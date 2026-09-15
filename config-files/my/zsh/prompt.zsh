@@ -3,6 +3,11 @@ python_venv() {
 	echo "(venv)"
 }
 
+nix_shell() {
+    [[ -z $IN_NIX_SHELL ]] && return
+	echo "(nix-shell)"
+}
+
 git_info() {
     local git="git"
     case "$PWD" in
@@ -35,7 +40,8 @@ git_info() {
 segments() {
 	local g=$(git_info)
 	local v=$(python_venv)
-	local s="$g$v"
+	local n=$(nix_shell)
+	local s="$n$g$v"
     [[ -z $s ]] && return
 	echo "$s "
 }
