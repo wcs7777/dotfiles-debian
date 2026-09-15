@@ -3,6 +3,8 @@
   - dotbot-plugins/apt.py
 
 - shell:
+  - [sudo systemctl start dbus, Starting dbus service]
+  - [sudo systemctl reset-failed, Resetting failed services]
   - [git submodule update --init --recursive, Installing submodules]
   - [sudo chown root:root "$(pwd)"/config-files/etc/wsl.conf, Making root owner of wsl.conf]
   - [sudo ln -f "$(pwd)"/config-files/etc/wsl.conf /etc/wsl.conf, Linking wsl.conf]
@@ -39,6 +41,9 @@
     ~/.config/home-manager/home.nix:
       type: hardlink
       path: ./config-files/config/home-manager/home.nix
+    ~/.config/nix/nix.conf:
+      type: hardlink
+      path: ./config-files/config/nix/nix.conf
 
 - defaults:
     git:
@@ -95,14 +100,18 @@
   - zsh
 
 - shell:
-  -
-    command: source ./install-scripts/nix.sh
-    description: Installing nix
-    stdin: true
-    stdout: true
-    stderr: true
   - [source ./install-scripts/mise.sh, Installing mise]
   - [source ./install-scripts/docker.sh, Installing docker]
+  - [source ./setup-scripts/config-locales.sh, Configuring locales]
   - [source ./install-scripts/nvim.sh, Installing nvim]
-  - [source ./install-scripts/tmux-sessionizer.sh, Installing tmux-sessionizer]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
+
+- defaults:
+    shell:
+      stdin: true
+      stdout: true
+      stderr: true
+      quiet: false
+
+- shell:
+  - [zsh -c "mise install", Installing mise packages]
