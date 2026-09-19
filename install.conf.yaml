@@ -27,6 +27,8 @@
     ~/.config/litecli/config: ./config-files/config/litecli/config
     ~/.config/sqlfluff/setup.cfg: ./config-files/config/sqlfluff/setup.cfg
     ~/.config/.prettierrc.json: ./config-files/config/prettierrc.json
+    ~/.config/alacritty: ./config-files/config/alacritty/
+    ~/.config/foot: ./config-files/config/foot/
     ~/.my: ./config-files/my
     ~/.config/home-manager/flake.nix:
       type: hardlink
@@ -93,10 +95,14 @@
   - zsh
 
 - shell:
-  - [source ./install-scripts/nix.sh, Installing nix]
-  - [source ./install-scripts/mise.sh, Installing mise]
-  - [source ./install-scripts/docker.sh, Installing docker]
-  - [source ./install-scripts/nvim.sh, Installing nvim]
+  - [./install-scripts/nix.sh, Installing nix]
+  - [./install-scripts/mise.sh, Installing mise]
+  - [./install-scripts/docker.sh, Installing docker]
+  - [./install-scripts/nvim.sh, Installing nvim]
+  - [./install-scripts/ddcutil.sh, Installing ddcutil]
+  - [./install-scripts/firefox.sh, Installing firefox]
+  - [./install-scripts/cascadia-code.sh, Installing cascadia-code]
+  - [./install-scripts/smi-display.sh, Installing smi-display]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
 - defaults:

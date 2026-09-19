@@ -1,0 +1,34 @@
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/neopaper.toml"
+]
+
+[window]
+decorations = "None"
+startup_mode = "Fullscreen"
+padding = { x = 5, y = 5 }
+
+[font]
+normal = { family = "Cascadia Mono NF", style = "Regular" }
+size = 10.5
+offset = { x = 0, y = 5 }
+
+[keyboard]
+bindings = [
+  # --- Disable Font Scaling ---
+  { key = "Equals", mods = "Control", action = "ReceiveChar" },
+  { key = "Minus", mods = "Control", action = "ReceiveChar" },
+  { key = "Key0",   mods = "Control", action = "ReceiveChar" },
+
+  # --- Disable Search / Vi Mode Toggle ---
+  { key = "Space", mods = "Control|Shift", action = "ReceiveChar" },
+  { key = "F",     mods = "Control|Shift", action = "ReceiveChar" },
+  { key = "B",     mods = "Control|Shift", action = "ReceiveChar" },
+
+  # --- Disable Scrollback History Navigation ---
+  { key = "PageUp",   mods = "Shift", action = "ReceiveChar" },
+  { key = "PageDown", mods = "Shift", action = "ReceiveChar" },
+  { key = "Home",     mods = "Shift", action = "ReceiveChar" },
+  { key = "End",      mods = "Shift", action = "ReceiveChar" }
+]

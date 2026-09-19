@@ -2,7 +2,7 @@
 
 if command -v ddcutil &> /dev/null; then
 	echo "ddcutil is already installed"
-	return 0
+	exit 0
 fi
 
 sudo apt-get update

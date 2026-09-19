@@ -1,0 +1,35 @@
+# Colors (neopaper)
+
+# Default colors
+[colors.primary]
+background = "#F4F5F5"
+foreground = "#010B13"
+
+[colors.normal]
+black = "#010B13"
+red = "#AF0000"
+green = "#0E5AA6"
+yellow = "#AF5F00"
+blue = "#27408B"
+magenta = "#8700AF"
+cyan = "#005F87"
+white = "#878787"
+
+[colors.bright]
+black = "#414D57"
+red = "#E14133"
+green = "#007FFF"
+yellow = "#D75F00"
+blue = "#0072C1"
+magenta = "#E563BA"
+cyan = "#0087AF"
+white = "#585858"
+
+# [colors.cursor]
+# cursor = "#ABC2FF"
+# text = "#F4F5F5"
+# text = "#010B13"
+
+# [colors.selection]
+# background = "#0087AF"
+# text = "#F4F5F5"
