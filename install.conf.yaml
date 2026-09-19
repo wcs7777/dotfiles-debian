@@ -73,6 +73,7 @@
   - libffi-dev
   - libicu-dev
   - libncurses-dev
+  - libnotify-bin
   - libnspr4
   - libnss3
   - libreadline-dev
@@ -91,10 +92,12 @@
   - unzip
   - vim-gtk3
   - wget
+  - wl-clipboard
   - zip
   - zsh
 
 - shell:
+  - mkdir -p ~/Workspace/
   - [./install-scripts/nix.sh, Installing nix]
   - [./install-scripts/mise.sh, Installing mise]
   - [./install-scripts/docker.sh, Installing docker]
