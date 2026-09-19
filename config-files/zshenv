@@ -11,7 +11,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 additional_paths=(
 	~/.local/bin
-	/mnt/d/wsl/path
 	/opt/mssql-tools18/bin
 )
 for p in "${additional_paths[@]}"

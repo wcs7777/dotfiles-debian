@@ -1,6 +1,3 @@
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-	useHttpPath = true
 [core]
 	repositoryFormatVersion = 0
 	symlinks = false
@@ -21,3 +18,9 @@
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [init]
 	defaultBranch = main
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = gpg
+[credential "https://dev.azure.com"]
+	useHttpPath = true

@@ -6,9 +6,6 @@
   - [sudo systemctl start dbus, Starting dbus service]
   - [sudo systemctl reset-failed, Resetting failed services]
   - [git submodule update --init --recursive, Installing submodules]
-  - [sudo chown root:root "$(pwd)"/config-files/etc/wsl.conf, Making root owner of wsl.conf]
-  - [sudo ln -f "$(pwd)"/config-files/etc/wsl.conf /etc/wsl.conf, Linking wsl.conf]
-  - [ln -fs /mnt/c/Users/$(/mnt/c/Program\ Files/PowerShell/7/pwsh.exe -NoProfile -Command 'Write-Host $env:USERNAME -NoNewline') ~/win, Creating windows symbolic link]
 
 - defaults:
     link:
@@ -21,7 +18,6 @@
     ~/.zshenv: ./config-files/zshenv
     ~/.vim/vimrc: ./config-files/vim/vimrc
     ~/.vim/colors/PaperColor.vim: ./config-files/vim/colors/PaperColor.vim
-    ~/.local/bin/xdg-open: ./config-files/local/bin/xdg-open
     ~/.config/delta: ./config-files/config/delta
     ~/.config/bat/config: ./config-files/config/bat/config
     ~/.config/mise: ./config-files/config/mise
@@ -32,9 +28,6 @@
     ~/.config/sqlfluff/setup.cfg: ./config-files/config/sqlfluff/setup.cfg
     ~/.config/.prettierrc.json: ./config-files/config/prettierrc.json
     ~/.my: ./config-files/my
-    ~/data:
-      path: /mnt/wsl/data
-      ignore-missing: true
     ~/.config/home-manager/flake.nix:
       type: hardlink
       path: ./config-files/config/home-manager/flake.nix
@@ -100,9 +93,9 @@
   - zsh
 
 - shell:
+  - [source ./install-scripts/nix.sh, Installing nix]
   - [source ./install-scripts/mise.sh, Installing mise]
   - [source ./install-scripts/docker.sh, Installing docker]
-  - [source ./setup-scripts/config-locales.sh, Configuring locales]
   - [source ./install-scripts/nvim.sh, Installing nvim]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
