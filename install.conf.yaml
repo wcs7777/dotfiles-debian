@@ -106,6 +106,7 @@
   - [./install-scripts/firefox.sh, Installing firefox]
   - [./install-scripts/cascadia-code.sh, Installing cascadia-code]
   - [./install-scripts/smi-display.sh, Installing smi-display]
+  - [./install-scripts/git-credential-manager.sh, Installing git-credential-manager]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
 - defaults:
