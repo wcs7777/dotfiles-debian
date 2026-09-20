@@ -31,6 +31,7 @@
     ~/.config/.prettierrc.json: ./config-files/config/prettierrc.json
     ~/.config/alacritty: ./config-files/config/alacritty/
     ~/.config/foot: ./config-files/config/foot/
+    ~/.local/bin/monitor-brightness: ./config-files/my/scripts/monitor-brightness.sh
     ~/.my: ./config-files/my
     ~/.config/home-manager/flake.nix:
       type: hardlink
@@ -72,6 +73,7 @@
   - file
   - fuse
   - git
+  - gnome-tweaks
   - gnupg
   - libffi-dev
   - libicu-dev
@@ -107,6 +109,7 @@
   - [./install-scripts/ddcutil.sh, Installing ddcutil]
   - [./install-scripts/firefox.sh, Installing firefox]
   - [./install-scripts/cascadia-code.sh, Installing cascadia-code]
+  - [./install-scripts/flatpak.sh, Installing flatpak]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
 - defaults:

@@ -4,6 +4,7 @@ ACTION=$1
 BUS=4
 STEP=5
 CURRENT=100
+NOTIFY=yes
 
 update_current() {
     CURRENT=$(ddcutil getvcp 10 --bus $BUS --brief | grep -oP ' C \K\d+')
@@ -24,17 +25,10 @@ elif [ "$ACTION" = "=" ]; then
     )
     ddcutil setvcp 10 "$OUTPUT" --bus $BUS
 elif [ "$ACTION" = "." ]; then
-    update_current
-    OUTPUT=$(
-        zenity \
-            --scale \
-            --title="Brightness" \
-            --text="Current: $CURRENT" \
-            --min-value=0 \
-            --max-value=100 \
-            --value=$CURRENT
-    )
-    ddcutil setvcp 10 $OUTPUT --bus $BUS
+    NOTIFY=no
+    if [[ -n $2 ]]; then
+        ddcutil setvcp 10 $2 --bus $BUS
+    fi
 else
     echo "Usage: $0 [+|-|=|.]"
     exit 1
@@ -42,6 +36,10 @@ fi
 
 update_current
 echo "Brightness: $CURRENT"
+
+if [ "$NOTIFY" = "no" ]; then
+    exit 0
+fi
 
 NOTIF_ID=
 ID_FILE="/tmp/brightness-notification"
