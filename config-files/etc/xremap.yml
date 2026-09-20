@@ -1,0 +1,40 @@
+keymap:
+  - name: Firefox and Chrome - select word + context menu + h or select word + context menu + o + s
+    application:
+      only: [firefox, Firefox]
+    remap:
+      BTN_SIDE:
+        # Select word under cursor
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        # Open context menu
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        # Select item with this access key letter
+        - h
+      BTN_EXTRA:
+        # Select word under cursor
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        # Open context menu
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        # Select item with this access key letter
+        - { sleep: 90 }
+        - o
+        # Select subitem with this access key letter
+        - { sleep: 90 }
+        - s
+  - name: Suppress BTN_SIDE everywhere else
+    remap:
+      BTN_SIDE: []
+      BTN_EXTRA: []

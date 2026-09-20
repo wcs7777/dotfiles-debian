@@ -6,6 +6,8 @@
   - [sudo systemctl start dbus, Starting dbus service]
   - [sudo systemctl reset-failed, Resetting failed services]
   - [git submodule update --init --recursive, Installing submodules]
+  - [sudo chown root:root "$(pwd)"/config-files/etc/xremap.yml, Making root owner of xremap.yml]
+  - [sudo ln -f "$(pwd)"/config-files/etc/xremap.yml /etc/xremap.yml, Linking xremap.yml]
 
 - defaults:
     link:
