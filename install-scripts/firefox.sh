@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if command -v firefox &> /dev/null; then
+if command -v firefox &> /dev/null && firefox --version | grep -q -v "esr"; then
 	echo "firefox is already installed"
 	exit 0
 fi
 
-sudo apt-get remove firefox-esr
+sudo apt-get remove firefox-esr --yes
 rm -rf ~/.cache/mozilla/
 rm -rf ~/.mozilla/
 

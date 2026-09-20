@@ -24,6 +24,6 @@ curl -SL \
 sudo apt-get install "$file"
 
 git-credential-manager configure
-gpg --full-generate-key
+gpg --generate-key
 pass init "$(gpg --list-secret-keys --with-colons | awk -F: '/^fpr:/ {print $10; exit}')"
 git config --global credential.credentialStore gpg

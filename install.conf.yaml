@@ -62,6 +62,7 @@
       batch_mode: true
 
 - apt:
+  - alacritty
   - apt-transport-https
   - autoconf
   - automake
@@ -100,15 +101,12 @@
 
 - shell:
   - mkdir -p ~/Workspace/
-  - [./install-scripts/nix.sh, Installing nix]
   - [./install-scripts/mise.sh, Installing mise]
   - [./install-scripts/docker.sh, Installing docker]
   - [./install-scripts/nvim.sh, Installing nvim]
   - [./install-scripts/ddcutil.sh, Installing ddcutil]
   - [./install-scripts/firefox.sh, Installing firefox]
   - [./install-scripts/cascadia-code.sh, Installing cascadia-code]
-  - [./install-scripts/smi-display.sh, Installing smi-display]
-  - [./install-scripts/git-credential-manager.sh, Installing git-credential-manager]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
 - defaults:
@@ -119,4 +117,7 @@
       quiet: false
 
 - shell:
+  - [./install-scripts/smi-display.sh, Installing smi-display]
+  - [./install-scripts/nix.sh, Installing nix]
+  - [./install-scripts/git-credential-manager.sh, Installing git-credential-manager]
   - [zsh -c "mise install", Installing mise packages]
