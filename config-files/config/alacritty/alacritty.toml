@@ -6,7 +6,7 @@ import = [
 
 [window]
 decorations = "None"
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 padding = { x = 5, y = 5 }
 
 [font]
