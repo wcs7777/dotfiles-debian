@@ -17,9 +17,9 @@ offset = { x = 0, y = 5 }
 [keyboard]
 bindings = [
   # --- Disable Font Scaling ---
-  { key = "Equals", mods = "Control", action = "ReceiveChar" },
-  { key = "Minus", mods = "Control", action = "ReceiveChar" },
-  { key = "Key0",   mods = "Control", action = "ReceiveChar" },
+  # { key = "Equals", mods = "Control", action = "ReceiveChar" },
+  # { key = "Minus", mods = "Control", action = "ReceiveChar" },
+  # { key = "Key0",   mods = "Control", action = "ReceiveChar" },
 
   # --- Disable Search / Vi Mode Toggle ---
   { key = "Space", mods = "Control|Shift", action = "ReceiveChar" },
