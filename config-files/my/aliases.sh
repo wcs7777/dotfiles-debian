@@ -8,6 +8,7 @@ alias hs='history 1 | rg'
 alias hsi='history 1 | rg -i'
 alias permissions="stat -c '%a %U:%G %n'"
 alias rnvim="nvim -R"
+alias sudoedit="sudo -E /home/wcs/.local/bin/nvim"
 
 mkcd() {
 	mkdir -p -- "$1" && cd -P -- "$1"
