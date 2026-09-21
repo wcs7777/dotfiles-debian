@@ -1,7 +1,7 @@
 keymap:
-  - name: Firefox and Chrome - select word + context menu + h or select word + context menu + o + s
+  - name: How2Say shortcut
     application:
-      only: [firefox, Firefox]
+      only: [firefox, chromium]
     remap:
       BTN_SIDE:
         # Select word under cursor
@@ -17,6 +17,10 @@ keymap:
         - { sleep: 90 }
         # Select item with this access key letter
         - h
+  - name: Search in Cambridge PT shortcut
+    application:
+      only: firefox
+    remap:
       BTN_EXTRA:
         # Select word under cursor
         - { press: BTN_LEFT }
@@ -34,7 +38,7 @@ keymap:
         # Select subitem with this access key letter
         - { sleep: 90 }
         - s
-  - name: Suppress BTN_SIDE everywhere else
+  - name: Suppress extra mouse buttons everywhere
     remap:
       BTN_SIDE: []
       BTN_EXTRA: []
