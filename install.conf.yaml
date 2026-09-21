@@ -109,7 +109,7 @@
   - [./install-scripts/firefox.sh, Installing firefox]
   - [./install-scripts/cascadia-code.sh, Installing cascadia-code]
   - [./install-scripts/flatpak.sh, Installing flatpak]
-  # - [./install-scripts/xremap.sh, Installing xremap]
+  - [./install-scripts/xremap.sh, Installing xremap]
   - [~/.local/bin/nvim --headless "+Lazy! install" +qa, Installing Lazy plugins]
 
 - defaults:
