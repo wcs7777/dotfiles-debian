@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f ~/.local/share/fonts/CascadiaCode.ttf ]; then
+if [ -f ~/.local/share/fonts/CascadiaCode-Regular.ttf ]; then
 	echo "CascadiaCode fonts are already installed"
 	exit 0
 fi
