@@ -5,10 +5,10 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys control-center "['<Su
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys search "['<Super>q']"
 
-org.gnome.settings-daemon.plugins.media-keys volume-down ['<Shift>KP_Right']
-org.gnome.settings-daemon.plugins.media-keys volume-up ['<Shift>KP_Page_Up']
-org.gnome.settings-daemon.plugins.media-keys volume-mute ['<Shift>KP_Next']
-org.gnome.settings-daemon.plugins.media-keys play ['<Shift>KP_Delete']
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Shift>KP_Right']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Shift>KP_Page_Up']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Shift>KP_Next']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys play "['<Shift>KP_Delete']"
 
 paths=()
 
