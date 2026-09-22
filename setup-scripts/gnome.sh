@@ -39,3 +39,17 @@ joined_paths=${joined_paths%, }
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[$joined_paths]"
 
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+
+if ! rg -q '^HandleLidSwitch=ignore' /etc/systemd/logind.conf; then
+	echo "Ignoring laptop lid close"
+	sudo sed -i '/HandleLidSwitch=/c\HandleLidSwitch=ignore' /etc/systemd/logind.conf
+	sudo sed -i '/HandleLidSwitchExternalPower=/c\HandleLidSwitchExternalPower=ignore' /etc/systemd/logind.conf
+	sudo sed -i '/HandleLidSwitchDocked=/c\HandleLidSwitchDocked=ignore' /etc/systemd/logind.conf
+fi
+
+if ! rg -q '^GRUB_TIMEOUT_STYLE' /etc/systemd/logind.conf; then
+	echo "Skipping grub in login"
+	sudo sed -i '/GRUB_TIMEOUT=/c\GRUB_TIMEOUT=0' /etc/default/grub
+	sudo sed -i '/GRUB_TIMEOUT=/a\GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
+	sudo update-grub
+fi
