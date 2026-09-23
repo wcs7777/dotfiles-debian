@@ -2,24 +2,22 @@ keymap:
   - name: How2Say shortcut
     application:
       only: [firefox, chromium]
+    device:
+      only: YICHIP Wireless Device Mouse
     remap:
       BTN_SIDE:
-        # Select word under cursor
         - { press: BTN_LEFT }
         - { release: BTN_LEFT }
         - { sleep: 30 }
         - { press: BTN_LEFT }
         - { release: BTN_LEFT }
-        - { sleep: 50 }
-        # Open context menu
-        - { press: BTN_RIGHT }
-        - { release: BTN_RIGHT }
-        - { sleep: 90 }
-        # Select item with this access key letter
-        - h
+        - { sleep: 30 }
+        - Shift-Alt-d
   - name: Search in Cambridge PT shortcut
     application:
       only: firefox
+    device:
+      only: YICHIP Wireless Device Mouse
     remap:
       BTN_EXTRA:
         # Select word under cursor

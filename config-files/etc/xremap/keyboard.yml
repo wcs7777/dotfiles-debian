@@ -1,0 +1,105 @@
+default_mode: normal
+keymap:
+  - name: Enter firefox shortcuts
+    application:
+      only: firefox
+    remap:
+      Shift-KPSlash: { set_mode: firefox-shortcuts }
+  - name: Firefox shortcuts
+    application:
+      only: firefox
+    mode: firefox-shortcuts
+    remap:
+      a:
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - Shift-Alt-d
+      s:
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - s
+      d:
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - d
+      f: Ctrl_R-w
+      z:
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - z
+      x:
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - x
+      c:
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 30 }
+        - { press: BTN_LEFT }
+        - { release: BTN_LEFT }
+        - { sleep: 50 }
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - c
+      t:
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - t
+      KEY_1:
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - KEY_1
+      KEY_2:
+        - { press: BTN_RIGHT }
+        - { release: BTN_RIGHT }
+        - { sleep: 90 }
+        - o
+        - { sleep: 90 }
+        - KEY_2
+      Esc: { set_mode: normal }
+      RightBrace:
+        - { set_mode: normal }
+        - RightBrace
