@@ -10,6 +10,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Shift>K
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Shift>KP_Next']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys play "['<Shift>KP_Delete']"
 
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Super><Shift>Left', '<Shift>KP_Left']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Super><Shift>Right', '<Shift>KP_End']"
+
 paths=()
 
 path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/brightness_up/"
