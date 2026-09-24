@@ -139,7 +139,7 @@ do_list_running() {
         if is_running; then
             local pid=$(cat "$PIDFILE")
             TARGET_SCRIPT=$(ps -o cmd= -p $pid | cut -d ' ' -f 2)
-            echo "$TARGET_SCRIPT"
+            echo "$pid $TARGET_SCRIPT"
         fi
     done
 }
