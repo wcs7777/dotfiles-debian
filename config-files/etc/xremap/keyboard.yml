@@ -4,7 +4,7 @@ keymap:
     application:
       only: firefox
     remap:
-      Shift-KPSlash: { set_mode: firefox-shortcuts }
+      Shift-Esc: { set_mode: firefox-shortcuts }
   - name: Firefox shortcuts
     application:
       only: firefox
