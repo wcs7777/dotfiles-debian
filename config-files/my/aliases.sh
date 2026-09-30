@@ -20,20 +20,16 @@ change-theme() {
 	sed -i "s/export THEME_STYLE=.*/export THEME_STYLE=\"$theme\"/" ~/.zshenv
 	source ~/.zshenv
 	if [[ $theme == "dark" ]]; then
-		if [ -f ~/.config/alacritty/alacritty.toml ]; then
-			sed -i '\#themes#c\    "~/.config/alacritty/themes/rose-pine-moon.toml"' ~/.config/alacritty/alacritty.toml
-		fi
-		if [ -f ~/.config/bat/config ]; then
-			sed -i 's/--theme=.*/--theme=Coldark-Dark/' ~/.config/bat/config
-		fi
+		sed -i '\#themes#c\    "~/.config/alacritty/themes/rose-pine-moon.toml"' ~/.config/alacritty/alacritty.toml 2> /dev/null
+		sed -i 's/--theme=.*/--theme=Coldark-Dark/' ~/.config/bat/config 2> /dev/null
+		sed -i 's/set -g @theme_style.*/set -g @theme_style "dark"/' ~/.config/tmux/tmux.conf 2> /dev/null
 	else
-		if [ -f ~/.config/alacritty/alacritty.toml ]; then
-			sed -i '\#themes#c\    "~/.config/alacritty/themes/neopaper.toml"' ~/.config/alacritty/alacritty.toml
-		fi
-		if [ -f ~/.config/bat/config ]; then
-			sed -i 's/--theme=.*/--theme=GitHub/' ~/.config/bat/config
-		fi
+		sed -i '\#themes#c\    "~/.config/alacritty/themes/neopaper.toml"' ~/.config/alacritty/alacritty.toml 2> /dev/null
+		sed -i 's/--theme=.*/--theme=GitHub/' ~/.config/bat/config 2> /dev/null
+		sed -i 's/set -g @theme_style.*/set -g @theme_style "light"/' ~/.config/tmux/tmux.conf 2> /dev/null
 	fi
+	tmux set-environment THEME_STYLE "$theme" 2> /dev/null
+	tmux source-file ~/.config/tmux/tmux.conf 2> /dev/null
 }
 
 dark-theme() {
