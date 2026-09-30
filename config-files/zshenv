@@ -6,6 +6,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export COLORTERM="truecolor"
 export EDITOR="vim"
 export PIP_REQUIRE_VIRTUALENV=true
+export THEME_STYLE="light"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
 
@@ -20,3 +21,11 @@ do
 	fi
 done
 unset additional_paths
+
+if [ -f ~/.config/alacritty/alacritty.toml ]; then
+	if [[ $THEME_STYLE == "dark" ]]; then
+		sed -i '\#themes#c\    "~/.config/alacritty/themes/rose-pine-moon.toml"' ~/.config/alacritty/alacritty.toml
+	else
+		sed -i '\#themes#c\    "~/.config/alacritty/themes/neopaper.toml"' ~/.config/alacritty/alacritty.toml
+	fi
+fi
