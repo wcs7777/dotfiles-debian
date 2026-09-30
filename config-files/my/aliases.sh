@@ -20,10 +20,16 @@ change-theme() {
 		sed -i '\#themes#c\    "~/.config/alacritty/themes/rose-pine-moon.toml"' ~/.config/alacritty/alacritty.toml 2> /dev/null
 		sed -i 's/--theme=.*/--theme=Coldark-Dark/' ~/.config/bat/config 2> /dev/null
 		sed -i 's/set -g @theme_style.*/set -g @theme_style "dark"/' ~/.config/tmux/tmux.conf 2> /dev/null
+		sed -i 's/local theme_style =.*/local theme_style = "dark"/' ~/.config/nvim/lua/user/plugins/colorschemes.lua 2> /dev/null
+		sed -i 's/set background=.*/set background=dark/' ~/.vim/vimrc 2> /dev/null
+		sed -i 's/colorscheme.*/colorscheme catppuccin/' ~/.vim/vimrc 2> /dev/null
 	else
 		sed -i '\#themes#c\    "~/.config/alacritty/themes/neopaper.toml"' ~/.config/alacritty/alacritty.toml 2> /dev/null
 		sed -i 's/--theme=.*/--theme=GitHub/' ~/.config/bat/config 2> /dev/null
 		sed -i 's/set -g @theme_style.*/set -g @theme_style "light"/' ~/.config/tmux/tmux.conf 2> /dev/null
+		sed -i 's/local theme_style =.*/local theme_style = "light"/' /home/wcs/.config/nvim/lua/user/plugins/colorschemes.lua 2> /dev/null
+		sed -i 's/set background=.*/set background=light/' ~/.vim/vimrc 2> /dev/null
+		sed -i 's/colorscheme.*/colorscheme PaperColor/' ~/.vim/vimrc 2> /dev/null
 	fi
 	tmux set-environment THEME_STYLE "$theme" 2> /dev/null
 	tmux source-file ~/.config/tmux/tmux.conf 2> /dev/null

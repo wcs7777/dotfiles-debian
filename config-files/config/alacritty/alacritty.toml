@@ -1,7 +1,7 @@
 [general]
 live_config_reload = true
 import = [
-    "~/.config/alacritty/themes/neopaper.toml"
+    "~/.config/alacritty/themes/rose-pine-moon.toml"
 ]
 
 [window]
@@ -10,7 +10,10 @@ startup_mode = "Maximized"
 padding = { x = 5, y = 5 }
 
 [font]
-normal = { family = "Cascadia Mono NF", style = "Regular" }
+# normal = { family = "Cascadia Mono NF", style = "Regular" }
+# normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Regular" }
+# normal = { family = "Monaco", style = "Regular" }
+normal = { family = "Menlo", style = "Regular" }
 size = 10.5
 offset = { x = 0, y = 5 }
 
