@@ -42,6 +42,8 @@ joined_paths=${joined_paths%, }
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[$joined_paths]"
 
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 3600
+gsettings set org.gnome.desktop.session idle-delay 3000
 
 if ! rg -q '^HandleLidSwitch=ignore' /etc/systemd/logind.conf; then
 	echo "Ignoring laptop lid close"
