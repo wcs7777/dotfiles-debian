@@ -100,6 +100,7 @@ keymap:
         - { sleep: 90 }
         - KEY_2
       Esc: { set_mode: normal }
+      g: { set_mode: normal }
       RightBrace:
         - { set_mode: normal }
         - RightBrace
