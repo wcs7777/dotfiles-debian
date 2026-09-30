@@ -12,8 +12,8 @@ padding = { x = 5, y = 5 }
 [font]
 # normal = { family = "Cascadia Mono NF", style = "Regular" }
 # normal = { family = "JetBrainsMonoNL Nerd Font Mono", style = "Regular" }
-# normal = { family = "Monaco", style = "Regular" }
-normal = { family = "Menlo", style = "Regular" }
+normal = { family = "Monaco", style = "Regular" }
+# normal = { family = "Menlo", style = "Regular" }
 size = 10.5
 offset = { x = 0, y = 5 }
 
