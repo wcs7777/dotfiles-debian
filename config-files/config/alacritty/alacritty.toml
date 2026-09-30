@@ -32,3 +32,6 @@ bindings = [
   { key = "Home",     mods = "Shift", action = "ReceiveChar" },
   { key = "End",      mods = "Shift", action = "ReceiveChar" }
 ]
+
+[mouse]
+hide_when_typing = true
