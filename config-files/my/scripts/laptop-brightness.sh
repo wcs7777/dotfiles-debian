@@ -1,37 +1,39 @@
 #!/bin/bash
 
 ACTION=$1
-BUS=4
 STEP=5
 CURRENT=100
 NOTIFY=no
+MAX_BRIGHTNESS=96000
 
 update_current() {
-    CURRENT=$(ddcutil getvcp 10 --bus $BUS --brief | grep -oP ' C \K\d+')
+    CURRENT=$(("$(brightnessctl get) * 100 / $MAX_BRIGHTNESS"))
 }
 
+update_current
+
 if [ "$ACTION" = "+" ]; then
-    ddcutil setvcp 10 + $STEP --bus $BUS
+    ((CURRENT += STEP))
 elif [ "$ACTION" = "-" ]; then
-    ddcutil setvcp 10 - $STEP --bus $BUS
+    ((CURRENT -= STEP))
 elif [ "$ACTION" = "=" ]; then
-    update_current
-    OUTPUT=$(
+    CURRENT=$(
         zenity \
             --entry \
             --title="Brightness" \
             --text="Current: $CURRENT" \
             --entry-text=$CURRENT
     )
-    ddcutil setvcp 10 "$OUTPUT" --bus $BUS
 elif [ "$ACTION" = "." ]; then
     if [[ -n $2 ]]; then
-        ddcutil setvcp 10 $2 --bus $BUS
+        CURRENT=$2
     fi
 else
     echo "Usage: $0 [+|-|=|.]"
     exit 1
 fi
+
+brightnessctl set "${CURRENT}%"
 
 update_current
 echo "Brightness: $CURRENT"
@@ -41,7 +43,7 @@ if [ "$NOTIFY" = "no" ]; then
 fi
 
 NOTIF_ID=
-ID_FILE="/tmp/brightness-notification"
+ID_FILE="/tmp/laptop-notification"
 
 if [ -f "$ID_FILE" ]; then
     NOTIF_ID=$(cat "$ID_FILE")
@@ -56,5 +58,5 @@ notify-send --urgency=normal \
             --print-id \
             --replace-id=$NOTIF_ID \
             --expire-time=2000 \
-            "External Display" \
+            "Laptop Display" \
             "Brightness: ${CURRENT}%" > "$ID_FILE"

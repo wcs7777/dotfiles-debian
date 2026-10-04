@@ -31,6 +31,8 @@
     ~/.config/alacritty: ./config-files/config/alacritty/
     ~/.config/foot: ./config-files/config/foot/
     ~/.local/bin/monitor-brightness: ./config-files/my/scripts/monitor-brightness.sh
+    ~/.local/bin/laptop-brightness: ./config-files/my/scripts/laptop-brightness.sh
+    ~/.local/bin/screen-brightness: ./config-files/my/scripts/screen-brightness.sh
     ~/.local/bin/run-script: ./config-files/my/scripts/run-script.sh
     ~/.my: ./config-files/my
     ~/.config/home-manager/flake.nix:

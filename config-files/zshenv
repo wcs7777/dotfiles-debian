@@ -1,14 +1,14 @@
+export COLORTERM="truecolor"
+export EDITOR="vim"
+export PIP_REQUIRE_VIRTUALENV=true
+export THEME_STYLE="light"
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
+
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-
-export COLORTERM="truecolor"
-export EDITOR="vim"
-export PIP_REQUIRE_VIRTUALENV=true
-export THEME_STYLE="dark"
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7A7A7A"
 
 additional_paths=(
 	~/.local/bin
@@ -21,3 +21,5 @@ do
 	fi
 done
 unset additional_paths
+
+export LS_COLORS="$(vivid generate catppuccin-latte)"

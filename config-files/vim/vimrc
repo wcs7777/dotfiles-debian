@@ -10,8 +10,8 @@ if exists('$TMUX')
 	let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 endif
 
-set background=dark
-colorscheme catppuccin
+set background=light
+colorscheme PaperColor
 
 set autoindent
 set backspace=indent,eol,start

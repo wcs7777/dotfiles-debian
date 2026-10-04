@@ -33,7 +33,7 @@ function zvm_after_init() {
 . ~/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 additional_sources=(
-	~/foobar/barfoo.sh
+	/etc/foo/bar
 )
 for s in "${additional_sources[@]}"
 do
@@ -46,7 +46,5 @@ unset additional_sources
 if [ -f ~/.local/bin/mise ]; then
 	eval "$(~/.local/bin/mise activate zsh)"
 fi
-
-export LS_COLORS="$(vivid generate tokyonight-day)"
 
 . ~/.my/zsh/prompt.zsh

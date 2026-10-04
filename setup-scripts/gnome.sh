@@ -17,21 +17,21 @@ paths=()
 
 path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/brightness_up/"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path name 'Brightness up'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'monitor-brightness +'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'screen-brightness +'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path binding '<Shift>KP_Up'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path enable-in-lockscreen false
 paths+=("'$path'")
 
 path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/brightness_down/"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path name 'Brightness down'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'monitor-brightness -'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'screen-brightness -'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path binding '<Shift>KP_Begin'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path enable-in-lockscreen false
 paths+=("'$path'")
 
 path="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/brightness_set/"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path name 'Brightness set'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'monitor-brightness ='
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path command 'screen-brightness ='
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path binding '<Shift>KP_Down'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:$path enable-in-lockscreen false
 paths+=("'$path'")
